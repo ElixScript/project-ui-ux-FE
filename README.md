@@ -1,7 +1,3 @@
-Berikut adalah format README yang dirancang untuk tampilan GitHub yang lebih profesional:
-
----
-
 # 📋 **Project UI/UX Front-End**
 
 Proyek ini merupakan tugas kelompok untuk mata kuliah **UI/UX Front-End**, yang bertujuan untuk mempelajari studi kasus dan menerapkan konsep pembuatan website **Survei Kesehatan Mental**.
