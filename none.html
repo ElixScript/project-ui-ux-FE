@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Survey</title>
+    <style>
+        /* Center page styling */
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #f0f2f5;
+            font-family: Arial, sans-serif;
+            color: #333;
+        }
+        .survey-container {
+            max-width: 700px;
+            padding: 40px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        h1 {
+            font-size: 1.8em;
+            margin-bottom: 10px;
+        }
+        p {
+            margin-bottom: 20px;
+            color: #555;
+        }
+        .question {
+            margin: 20px 0;
+            font-weight: bold;
+        }
+        .options {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 10px;
+        }
+        .option {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        input[type="radio"] {
+            display: none;
+        }
+        label {
+            display: inline-block;
+            width: 35px;
+            height: 35px;
+            line-height: 35px;
+            text-align: center;
+            background-color: #e0e0e0;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        input[type="radio"]:checked + label {
+            background-color: rgb(45, 231, 45);
+            color: white;
+        }
+        .option span {
+            font-size: 0.8em;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+    <div class="survey-container">
+        <h1>Product Survey</h1>
+        <p>Welcome to our survey! Your feedback is essential in helping us improve. Thank you for taking the time to share your valuable insights.</p>
+
+        <!-- Question 1 -->
+        <div class="question" data-question="firstReaction">
+            What is your first reaction to the product?
+            <div class="options">
+                <!-- Options with radio inputs, unique IDs, and name attributes -->
+                <div class="option"><input type="radio" id="reaction-1" name="firstReaction" value="1"><label for="reaction-1">1</label><span>Very Negative</span></div>
+                <div class="option"><input type="radio" id="reaction-2" name="firstReaction" value="2"><label for="reaction-2">2</label></div>
+                <!-- Repeat up to 10, just like in your example image -->
+                <div class="option"><input type="radio" id="reaction-10" name="firstReaction" value="10"><label for="reaction-10">10</label><span>Very Positive</span></div>
+            </div>
+        </div>
+
+        <!-- Question 2 -->
+        <div class="question" data-question="quality">
+            What is the quality of the product?
+            <div class="options">
+                <div class="option"><input type="radio" id="quality-1" name="quality" value="1"><label for="quality-1">1</label><span>Very Low Quality</span></div>
+                <!-- Repeat options up to 10 as needed -->
+                <div class="option"><input type="radio" id="quality-10" name="quality" value="10"><label for="quality-10">10</label><span>Very High Quality</span></div>
+            </div>
+        </div>
+
+        <!-- Question 3 -->
+        <div class="question" data-question="innovation">
+            How innovative is the product?
+            <div class="options">
+                <div class="option"><input type="radio" id="innovation-1" name="innovation" value="1"><label for="innovation-1">1</label><span>Not at all</span></div>
+                <!-- Repeat options up to 10 as needed -->
+                <div class="option"><input type="radio" id="innovation-10" name="innovation" value="10"><label for="innovation-10">10</label><span>Extremely</span></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript to capture responses and log to console
+        const responses = {
+            firstReaction: null,
+            quality: null,
+            innovation: null
+        };
+
+        document.querySelectorAll('input[type="radio"]').forEach(radio => {
+            radio.addEventListener('change', (event) => {
+                const questionName = event.target.name;
+                const responseValue = event.target.value;
+
+                // Save the response
+                responses[questionName] = responseValue;
+
+                // Log the responses object to the console
+                console.log("Updated Responses:", responses);
+            });
+        });
+    </script>
+</body>
+</html>

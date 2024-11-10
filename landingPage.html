@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page</title>
+    <style>
+        /* Importing Agrandir font */
+        @import url('https://fonts.googleapis.com/css2?family=Agrandir:wght@400&display=swap');
+
+        /* Basic reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Background and layout */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #D4F6F9; /* Soft light blue/cream background */
+            text-align: center;
+            margin: 0;
+            position: relative; /* Needed for footer positioning */
+        }
+
+        /* Container styling */
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: #4a4a4a; /* Dark gray color for text */
+        }
+
+        /* Header styling */
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 0.5rem;
+            color: #4a4a4a; /* Dark gray color */
+        }
+
+        /* Paragraph styling */
+        .text {
+            font-size: 1.5rem;
+            font-weight: normal;
+            color: #6c6c6c; /* Slightly lighter gray */
+            margin-bottom: 0.5rem;
+        }
+
+        .text + .text {
+            margin-bottom: 2rem; /* Space after the second line */
+        }
+
+        /* Start button styling */
+        .start-button {
+            padding: 1rem 2rem;
+            font-size: 1.25rem;
+            color: #6c6c6c; /* Gray color */
+            background-color: #f0f0f0; /* Off-white button background */
+            border: 2px solid #6c6c6c;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        /* Hover effect for the button */
+        .start-button:hover {
+            background-color: #dcdcdc;
+        }
+
+        /* Footer styling */
+        footer {
+            position: absolute;
+            bottom: 1rem;
+            left: 50%;
+            transform: translateX(-50%);
+            font-family: 'Agrandir', sans-serif;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .footer-text .dark-grey {
+            color: #4a4a4a; /* Dark gray for "youR" */
+        }
+
+        .footer-text .black {
+            color: #000; /* Black for "ex" */
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome</h1>
+        <p class="text">You're not here because you're unhealthy.</p>
+        <p class="text">You're to fulfill the prerequisites before filling your KRS :)</p>
+        <button class="start-button">
+            <a href="questionPage.html" >START</a>
+        </button>
+    </div>
+
+    <footer>
+        <span class="footer-text">
+            <span class="dark-grey">youR</span><span class="black">ex</span>
+        </span>
+    </footer>
+</body>
+</html>
