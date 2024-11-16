@@ -3,15 +3,84 @@ body {
     background-color: #D4F6F9;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     height: 100vh;
     margin: 0;
-    margin-top: 700px;
+    padding-top: 20px;
 }
+
+.kotak-container{
+    display: flex;
+    height: 250px;
+
+    justify-content: space-between;
+    align-items: center;
+}
+
+.kotak {
+    width: 300px;
+    height: 200px;
+    background-color: #9cc1c5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    margin-right: 3%;
+    margin-left: 3%;
+}
+
+.kotak-teks {
+    font-weight: bold;
+    text-align: center;
+    font-size: 1.2rem;
+    color: #333;
+    line-height: 1.5;
+}
+
 
 h2{
     text-align: center;
     font-size: 3rem;
+}
+
+.progress-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: sticky;
+    top: 0;
+    z-index: 10; 
+}
+
+.progress-bar {
+    position: relative;
+    width: 70%;
+    height: 30px;
+    background-color: #9cbab4;
+    border-radius: 50px;
+    margin-top: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.progress__fill{
+    width: 0%;
+    height: 100%;
+    background: #4CAF50;
+    border-radius: 50px;
+    position: absolute;
+    transition: width 0.5s ease-in-out;
+}
+
+.progress__text{
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    font: bold 1.2rem 'Agrandir';
+    color: #fff;
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
 }
 
 .survey-container {
@@ -19,14 +88,10 @@ h2{
     padding: 20px;
     background-color: #D4F6F9;
     border-radius: 8px;
-    max-width: 100%;
-    overflow: hidden;
-    padding-top: 30px;  
-    padding-bottom: 30px; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .page {
-    align-items: center;
     display: none;
 }
 
@@ -76,7 +141,7 @@ h2{
 }
 
 .option.selected {
-    background-color: #4CAF50;
+    background-color: #8dd98f;
     color: #fff;
 }
 
@@ -182,8 +247,16 @@ button {
     text-align: center;
 }
 
+.hidden {
+    display: none !important;
+}
+
 
 @media (max-width: 600px) {
+    body {
+        align-items: flex-start;
+        padding-top: 30px;
+    }
     .survey-container {
         width: 90%;
         padding: 15px;
