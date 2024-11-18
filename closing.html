@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Result</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+<body class="closing-page">
+    <div class="container">
+        <h1>You might have</h1>
+        <h2 id="result">Loading...</h2> <!-- Result from backend -->
+        <p class="support-text" id="supportText">Keep yourself safe!</p> <!-- Support text -->
+    </div>
+    <div>
+        <h1>Here are some hotlines you can contact:</h1>
+        <div style="margin-bottom: 2rem;"></div>
+    </div>
+
+    <div class="hotline-section">
+        <!-- Hotline Box 1 -->
+        <div class="hotline-box">
+            <h3>Gadjah Mada Medical Centre</h3>
+            <p>Phone: +6281326200342</p>
+            <p>Website: <a href="https://gmc.ugm.ac.id/" target="_blank">gmc.ugm.ac.id</a></p>
+        </div>
+        <!-- Hotline Box 2 -->
+        <div class="hotline-box">
+            <h3>Unit Konsultasi Psikologi UGM</h3>
+            <p>Phone (Services): +6285759161581</p>
+            <p>Phone (Emergency Response): +6281329520052</p>
+            <p>Website: <a href="https://ukp.psikologi.ugm.ac.id/" target="_blank">ukp.psikologi.ugm.ac.id</a></p>
+        </div>
+        <div class="hotline-box">
+            <h3>Sejiwa</h3>
+            <p>Phone: 119</p>
+            <p>Website: <a href="https://himpsi.or.id/" target="_blank">himpsi.or.id</a></p>
+        </div>
+    </div>
+    <div class="return">
+        <button class="return-button" onclick="window.location.href='landingPage.html'">Return</button>
+    </div>
+
+    <footer>
+        <span class="footer-text">
+            <span>youRex.</span>
+        </span>
+    <script>
+        // Example of setting the result dynamically from backend data (pseudo-code)
+        // document.getElementById("result").innerText = "Result will be loaded here."; // Update with actual backend data
+
+        // Array of supportive words
+        const supportMessages = [
+            "You're doing great!",
+            "Keep pushing forward!",
+            "Success is just around the corner!",
+            "Believe in yourself!",
+            "You've got this!",
+            "Stay positive and keep going!"
+        ];
+
+        // Randomly display a supportive message
+        function displayRandomSupport() {
+            const randomMessage = supportMessages[Math.floor(Math.random() * supportMessages.length)];
+            document.getElementById("supportText").innerText = randomMessage;
+        }
+
+        // Call the function on page load
+        displayRandomSupport();
+    </script>
+</body>
+</html>

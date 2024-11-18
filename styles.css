@@ -1,6 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap');
+
 body {
-    font-family: 'Host Grotesk', 'Agrandir';
-    background-color: #D4F6F9;
+    font-family: 'Instrument Sans', sans-serif; /* Updated font */
+    background-image: url('Question.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
     display: flex;
     justify-content: center;
     align-items: flex-start;
@@ -9,6 +15,7 @@ body {
     padding-top: 20px;
 }
 
+/*bagian pertanyaan*/
 .kotak-container{
     display: flex;
     height: 250px;
@@ -20,6 +27,7 @@ body {
 .kotak {
     width: 300px;
     height: 200px;
+    /*background-color: #D9E3E5; */
     background-color: #9cc1c5;
     display: flex;
     justify-content: center;
@@ -31,8 +39,9 @@ body {
 
 .kotak-teks {
     font-weight: bold;
+    font-style: italic;
     text-align: center;
-    font-size: 1.2rem;
+    font-size: 2rem;
     color: #333;
     line-height: 1.5;
 }
@@ -78,34 +87,61 @@ h2{
     top: 50%;
     right: 10px;
     transform: translateY(-50%);
-    font: bold 1.2rem 'Agrandir';
+    font: bold 1.2rem ;
     color: #fff;
     transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
 }
 
 .survey-container {
     width: 100%;
-    padding: 20px;
-    background-color: #D4F6F9;
+    padding: 50px;
+    /*background-image: url('Question.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;*/
+    background-color: #F3F4EE;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* padding: 20px; */
+    padding-bottom: 20px; /* Space for the footer */
 }
 
 .page {
     display: none;
+    padding: 150px;
 }
 
 .page.active {
     display: block;
+    padding: 150px;
 }
 
+.footer {
+    color: #ddd;
+    text-align: center;
+    padding: 10px 20px;
+    font-size: 24px;
+    font-family: 'Agrandir';
+    font-weight: bold;
+    font-style: italic;
+    position: relative; /* Stays at the bottom of the content */
+    bottom: 0;
+    width: 100%;
+}
 .yourex {
     width: 50%; 
     margin: 0 auto; 
     text-align: center;
-    font-size: 48px;
+    font-size: 24px;
     font-family: 'Agrandir';
     font-weight: bold;
+    font-style: italic;
+    color: #333;
+    padding: 10px 20px;
+    position: relative; /* Stays at the bottom of the content */
+    bottom: 0;
+    /* width: 100%; */
 }
 
 
@@ -295,3 +331,85 @@ button {
     }
 }
 
+.closing-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+    color: #333;
+    text-align: center;
+}
+
+.container {
+    width: 700px; /* Fixed size */
+    max-width: 90%; /* Responsive: Adjust for smaller screens */
+    padding: 50px;
+    background: #F3F4EE;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    margin-top: 250px;
+    margin-bottom: 30px;
+    border: 2px solid transparent; /* Debug border: Remove later */
+}
+
+.closing-page h1 {
+    font-size: 2.5rem; /* Adjust font size */
+    color: #45628A; /* Text color */
+    margin-bottom: 20px; /* Spacing below */
+     /* Optional: Transform text */
+}
+
+.closing-page h2 {
+    font-size: 2rem;
+    color: #555;
+    margin-bottom: 15px;
+    font-style: italic; /* Optional: Add style */
+}
+
+.closing-page h3 {
+    font-size: 1.5rem;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.closing-page p {
+    font-size: 1.2rem;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+#supportText.support-text {
+    font-size: 1rem;
+    color: #000;
+    margin-bottom: 20px;
+}
+
+.closing-page a {
+    font-size: 1.2rem;
+    color: #9cbab4;
+}
+
+.hotline-section {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap; /* Allows wrapping on smaller screens */
+    margin: 40px 0;
+    padding: 0 20px; /* Padding for responsive layout */
+}
+
+.hotline-box {
+    width: 250px;
+    padding: 15px;
+    background: #45628A;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+.return {
+    margin-top: 20px;
+}
