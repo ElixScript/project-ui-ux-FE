@@ -141,3 +141,51 @@ document.querySelectorAll(".option").forEach(button => {
     });
 });
 ```
+---
+
+## **✨ Perbaikan**
+
+### **Masalah**
+Pertanyaan nomor 10 hanya bersifat opsional dan tidak dimaksudkan untuk memengaruhi hasil survei. Sebelumnya, nilai dari pertanyaan ini tetap dihitung dalam total skor, menyebabkan hasil yang tidak akurat.
+
+### **Solusi**
+Dilakukan modifikasi pada fungsi yang menghitung total skor (`calculateResultsButton`) untuk mengecualikan `Kategori10` dari perhitungan skor:
+
+```javascript
+calculateResultsButton.addEventListener("click", function () {
+    if (!checkAllQuestionsAnswered()) {
+        return;
+    }
+
+    showPage(currentPage);
+
+    function getDepressionCategory(score) {
+        if (score <= 4) return "Minimal Depression";
+        else if (score <= 9) return "Mild Depression";
+        else if (score <= 14) return "Moderate Depression";
+        else if (score <= 19) return "Moderately Severe Depression";
+        else return "Severe Depression";
+    }
+
+    showPage(pages.length - 1);
+    resultsDiv.innerHTML = "";
+
+    // Perhitungan skor total, mengabaikan Kategori10
+    const totalScore = Object.entries(answers)
+        .filter(([category]) => category !== "Kategori10") // Abaikan kategori 10
+        .reduce((sum, [, score]) => sum + score, 0);
+
+    const depressionCategory = getDepressionCategory(totalScore);
+
+    const result = document.createElement("p");
+    result.textContent = depressionCategory;
+    resultsDiv.appendChild(result);
+});
+```
+
+### **Hasil Perbaikan**
+- Pertanyaan nomor 10 tetap terlihat di UI dan dapat diisi oleh pengguna.
+- Jawaban pada pertanyaan nomor 10 tidak memengaruhi hasil akhir survei.
+- Skor total yang dihasilkan menjadi lebih akurat dan sesuai logika survei.
+
+--- 
