@@ -34,57 +34,64 @@ Branch ini dibuat oleh **Bagus Cipta Pratama** dengan **NIM 23/516539/PA/22097**
      - Fungsi `getDepressionCategory(score)` dalam `script.js`.
      - Rendering hasil pada halaman terakhir (`page-3`).
 
-3. **🐞 [Perbaikan Bug]**
-   - Memperbaiki bug pada navigasi multi-halaman yang sebelumnya menyebabkan opsi yang dipilih tidak tersimpan.
-   - Memperbaiki visualisasi pilihan (highlight warna hijau) agar terlihat lebih jelas di perangkat dengan layar kecil.
+---
+
+### **🖱️ Event Listeners**
+
+#### **1. Event Listener untuk Tombol "Next"**
+**Deskripsi:** Mengatur navigasi antar halaman saat tombol "Next" ditekan.
+
+```javascript
+nextPageButton.addEventListener("click", function() {
+    if (currentPage < pages.length - 1) {
+        currentPage++; // Pindah ke halaman berikutnya
+        showPage(currentPage); // Tampilkan halaman yang sesuai
+    }
+});
+```
 
 ---
 
-### **🔧 Fungsi Utama**
+#### **2. Event Listener untuk Tombol "Lihat Hasil"**
+**Deskripsi:** Menampilkan hasil survei berdasarkan skor jawaban pengguna.
 
-#### 1. **📄 showPage(pageIndex)**
-   - **Deskripsi:** Menampilkan halaman survei berdasarkan index.
-   - **Implementasi:**
-     ```javascript
-     function showPage(pageIndex) {
-         pages.forEach((page, index) => {
-             page.classList.toggle("active", index === pageIndex);
-         });
-         if (pageIndex === 0 || pageIndex === 1) {
-             pages[pageIndex].scrollIntoView({ behavior: "smooth" });
-         }
-     }
-     ```
+```javascript
+calculateResultsButton.addEventListener("click", function() {
+    showPage(pages.length - 1); // Tampilkan halaman hasil
+    resultsDiv.innerHTML = ""; // Bersihkan hasil sebelumnya
 
-#### 2. **📈 getDepressionCategory(score)**
-   - **Deskripsi:** Menghitung kategori depresi berdasarkan skor total.
-   - **Implementasi:**
-     ```javascript
-     function getDepressionCategory(score) {
-         if (score <= 4) return "Minimal Depression";
-         else if (score <= 9) return "Mild Depression";
-         else if (score <= 14) return "Moderate Depression";
-         else if (score <= 19) return "Moderately Severe Depression";
-         else return "Severe Depression";
-     }
-     ```
+    // Iterasi setiap kategori skor dalam objek 'answers'
+    for (const [category, score] of Object.entries(answers)) {
+        const depressionCategory = getDepressionCategory(score); // Hitung kategori depresi
+        const result = document.createElement("p"); // Buat elemen untuk hasil
+        result.textContent = `Anda mengalami ${depressionCategory}`; // Isi hasil
+        resultsDiv.appendChild(result); // Tambahkan hasil ke halaman
+    }
+});
+```
 
-#### 3. **🔄 resetSurvey()**
-   - **Deskripsi:** Mengatur ulang semua jawaban dan mengembalikan pengguna ke halaman pertama.
-   - **Implementasi:**
-     ```javascript
-     function resetSurvey() {
-         currentPage = 0;
-         showPage(currentPage);
-         for (const category in answers) {
-             answers[category] = 0;
-         }
-         document.querySelectorAll(".option").forEach(btn => btn.classList.remove("selected"));
-         resultsDiv.innerHTML = "";
-     }
-     ```
+---
 
-#### 4. **🖱️ Event Listeners**
-   - Mengatur interaktivitas, seperti memilih opsi jawaban, navigasi antar halaman, dan menampilkan hasil.
+#### **3. Event Listener untuk Setiap Opsi Jawaban**
+**Deskripsi:** Menyimpan jawaban pengguna dan memberikan efek visual pada opsi yang dipilih.
+
+```javascript
+document.querySelectorAll(".option").forEach(button => {
+    button.addEventListener("click", function() {
+        const question = this.closest(".question"); // Temukan elemen pertanyaan
+        const category = question.getAttribute("data-category"); // Ambil kategori pertanyaan
+        const value = parseInt(this.getAttribute("data-value")); // Ambil nilai jawaban
+
+        answers[category] = (answers[category] || 0) + value; // Tambahkan skor ke kategori
+
+        // Hapus highlight pilihan sebelumnya dan tambahkan highlight pada pilihan baru
+        question.querySelectorAll(".option").forEach(btn => btn.classList.remove("selected"));
+        this.classList.add("selected");
+
+        // Gulir ke bawah secara smooth
+        window.scrollBy({ top: 300, behavior: "smooth" });
+    });
+});
+```
 
 ---
