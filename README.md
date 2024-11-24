@@ -13,9 +13,11 @@ Branch ini dibuat untuk mengembangkan fitur dan memperbaiki elemen-elemen pentin
    - **Fitur:**
      - Pertanyaan berbasis skala (0–3) yang relevan dengan penilaian depresi.
      - Navigasi antar halaman menggunakan tombol **Next**.
+     - Setiap tombol ketika dipencet akan langsung **scroll** ke pertanyaan berikutnya di bawah.
      - Desain responsif untuk pengalaman pengguna yang lebih baik di berbagai perangkat.
    - **Implementasi:**
      - Navigasi menggunakan JavaScript untuk mengatur state halaman.
+     - **Smooth scrolling** dengan memanfaatkan properti `scrollIntoView`.
 
 2. **📊 [Hasil Survei Dinamis]**
    - Menampilkan hasil akhir berdasarkan skor survei.
@@ -32,7 +34,7 @@ Branch ini dibuat untuk mengembangkan fitur dan memperbaiki elemen-elemen pentin
      - Fungsi `getDepressionCategory(score)` dalam `script.js`.
      - Rendering hasil pada halaman terakhir (`page-3`).
 
-4. **🐞 [Perbaikan Bug]**
+3. **🐞 [Perbaikan Bug]**
    - Memperbaiki bug pada navigasi multi-halaman yang sebelumnya menyebabkan opsi yang dipilih tidak tersimpan.
    - Memperbaiki visualisasi pilihan (highlight warna hijau) agar terlihat lebih jelas di perangkat dengan layar kecil.
 
@@ -49,7 +51,7 @@ Branch ini dibuat untuk mengembangkan fitur dan memperbaiki elemen-elemen pentin
              page.classList.toggle("active", index === pageIndex);
          });
          if (pageIndex === 0 || pageIndex === 1) {
-             window.scrollTo({ top: 0, behavior: "smooth" });
+             pages[pageIndex].scrollIntoView({ behavior: "smooth" });
          }
      }
      ```
@@ -86,6 +88,3 @@ Branch ini dibuat untuk mengembangkan fitur dan memperbaiki elemen-elemen pentin
    - Mengatur interaktivitas, seperti memilih opsi jawaban, navigasi antar halaman, dan menampilkan hasil.
 
 ---
-
-
-
