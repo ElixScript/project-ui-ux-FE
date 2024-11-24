@@ -14,7 +14,6 @@ Branch ini dibuat oleh **Bagus Cipta Pratama** dengan **NIM 23/516539/PA/22097**
   - Pertanyaan berbasis skala (0–3) yang relevan dengan penilaian depresi.
   - Navigasi antar halaman menggunakan tombol **Next**.
   - Setiap tombol ketika dipencet akan langsung **scroll** ke pertanyaan berikutnya di bawah.
-  - Desain responsif untuk pengalaman pengguna yang lebih baik di berbagai perangkat.
 - **Implementasi:**
   - Navigasi menggunakan JavaScript untuk mengatur state halaman.
   - **Smooth scrolling** dengan memanfaatkan properti `scrollIntoView`.
