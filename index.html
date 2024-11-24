@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Health Questionnaire</title>
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Host+Grotesk:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Agrandir:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:ital,wght@0,100..900;1,100..900&family=Funnel+Sans:ital,wght@0,300..800;1,300..800&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=PT+Sans+Caption:wght@400;700&family=Sora:wght@100..800&display=swap" rel="stylesheet">
+</head>
+<body>
+<!-- <div class = "content"> -->
+    <div class="survey-container">
+        <div class="kotak-container">
+            <div class="kotak">
+                <span class="kotak-teks">Be yourself and answer honestly</span>
+            </div>
+            <div class="kotak">
+                <span class="kotak-teks">Take your time, don't rush</span>
+            </div>
+            <div class="kotak">
+                <span class="kotak-teks">Your result won't mean failure</span>
+            </div>
+        </div>
+        <div class="progress-container">
+            <div class="progress-bar">
+                <div class="progress__fill"></div>
+                <span class="progress__text">0%</span>
+            </div>
+        </div>
+        <div class="page page-1 active">
+            <h2 style="padding-bottom: 20px;">Over the last 2 weeks, how often have you been
+                bothered by any of these?</h2>
+            <form id="surveyForm">
+                <div class="question" data-category="Kategori1">
+                    <p style="text-align: center;">Little interest or pleasure in doing things</p>
+                    <div class="options scale">
+                        <div class="scale-option-container">
+                            <button type="button" class="option scale-option" data-value="0"></button>
+                            <span>Not at all</span>
+                        </div>
+                        <div class="scale-option-container">
+                            <button type="button" class="option scale-option" data-value="1"></button>
+                            <span>Several days</span>
+                        </div>
+                        <div class="scale-option-container">
+                            <button type="button" class="option scale-option" data-value="2"></button>
+                            <span>More than half days</span>
+                        </div>
+                        <div class="scale-option-container">
+                            <button type="button" class="option scale-option" data-value="3"></button>
+                            <span>Nearly every day</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="spacer50px"></div>
+                <div class="question" data-category="Kategori2">
+                    <p style="text-align: center;">Feeling down, depressed, or hopeless</p>
+                    <div class="options scale">
+                        <div class="scale-option-container">
+                            <button type="button" class="option scale-option" data-value="0"></button>
+                            <span>Not at all</span>
+                        </div>
+                        <div class="scale-option-container">
+                            <button type="button" class="option scale-option" data-value="1"></button>
+                            <span>Several days</span>
+                        </div>
+                        <div class="scale-option-container">
+                            <button type="button" class="option scale-option" data-value="2"></button>
+                            <span>More than half days</span>
+                        </div>
+                        <div class="scale-option-container">
+                            <button type="button" class="option scale-option" data-value="3"></button>
+                            <span>Nearly every day</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="spacer50px"></div>
+                <div class="question" data-category="Kategori3">
+                    <p style="text-align: center;">Trouble falling or staying asleep, or sleeping too much</p>
+                    <div class="options scale">
+                        <div class="scale-option-container">
+                            <button type="button" class="option scale-option" data-value="0"></button>
+                            <span>Not at all</span>
+                        </div>
+                        <div class="scale-option-container">
+                            <button type="button" class="option scale-option" data-value="1"></button>
+                            <span>Several days</span>
+                        </div>
+                        <div class="scale-option-container">
+                            <button type="button" class="option scale-option" data-value="2"></button>
+                            <span>More than half days</span>
+                        </div>
+                        <div class="scale-option-container">
+                            <button type="button" class="option scale-option" data-value="3"></button>
+                            <span>Nearly every day</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="spacer50px"></div>
+                <div class="question" data-category="Kategori4">
+                    <p style="text-align: center;">Feeling tired or having little energy</p>
+                    <div class="options scale">
+                        <div class="scale-option-container">
+                            <button type="button" class="option scale-option" data-value="0"></button>
+                            <span>Not at all</span>
+                        </div>
+                        <div class="scale-option-container">
+                            <button type="button" class="option scale-option" data-value="1"></button>
+                            <span>Several days</span>
+                        </div>
+                        <div class="scale-option-container">
+                            <button type="button" class="option scale-option" data-value="2"></button>
+                            <span>More than half days</span>
+                        </div>
+                        <div class="scale-option-container">
+                            <button type="button" class="option scale-option" data-value="3"></button>
+                            <span>Nearly every day</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="spacer50px"></div>
+                <div class="question" data-category="Kategori5">
+                    <p style="text-align: center;">Poor appetite or overeating</p>
+                    <div class="options scale">
+                        <div class="scale-option-container">
+                            <button type="button" class="option scale-option" data-value="0"></button>
+                            <span>Not at all</span>
+                        </div>
+                        <div class="scale-option-container">
+                            <button type="button" class="option scale-option" data-value="1"></button>
+                            <span>Several days</span>
+                        </div>
+                        <div class="scale-option-container">
+                            <button type="button" class="option scale-option" data-value="2"></button>
+                            <span>More than half days</span>
+                        </div>
+                        <div class="scale-option-container">
+                            <button type="button" class="option scale-option" data-value="3"></button>
+                            <span>Nearly every day</span>
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <div class="spacer100px"></div>
+            <button id="nextPage" :hover>Next</button>
+            <div class="spacer100px"></div>
+            <!-- <div class="spacer100px"></div> -->
+            <!-- <p class="yourex">youRex.</p> -->
+            <footer>
+                <span class="footer-text">
+                    <span class="dark-grey">youR</span><span class="black">ex</span><span class="dark-grey">.</span>
+                </span>
+            </footer>
+        </div>
+
+        <div class="page page-2">
+            <h2 style="padding-bottom: 20px;">Over the last 2 weeks, how often have you been
+                bothered by any of these?</h2>
+            <div class="question" data-category="Kategori6">
+                <p style="text-align: center;">
+                    Feeling bad about yourself or that you are a failure or
+                    have let yourself or your family down
+                </p>
+                <div class="options scale">
+                    <div class="scale-option-container">
+                        <button type="button" class="option scale-option" data-value="0"></button>
+                        <span>Not at all</span>
+                    </div>
+                    <div class="scale-option-container">
+                        <button type="button" class="option scale-option" data-value="1"></button>
+                        <span>Several days</span>
+                    </div>
+                    <div class="scale-option-container">
+                        <button type="button" class="option scale-option" data-value="2"></button>
+                        <span>More than half days</span>
+                    </div>
+                    <div class="scale-option-container">
+                        <button type="button" class="option scale-option" data-value="3"></button>
+                        <span>Nearly every day</span>
+                    </div>
+                </div>
+            </div>
+            <div class="spacer50px"></div>
+            <div class="question" data-category="Kategori7">
+                <p style="text-align: center;">Trouble concentrating on things, such as reading the
+                    newspaper or watching television</p>
+                <div class="options scale">
+                    <div class="scale-option-container">
+                        <button type="button" class="option scale-option" data-value="0"></button>
+                        <span>Not at all</span>
+                    </div>
+                    <div class="scale-option-container">
+                        <button type="button" class="option scale-option" data-value="1"></button>
+                        <span>Several days</span>
+                    </div>
+                    <div class="scale-option-container">
+                        <button type="button" class="option scale-option" data-value="2"></button>
+                        <span>More than half days</span>
+                    </div>
+                    <div class="scale-option-container">
+                        <button type="button" class="option scale-option" data-value="3"></button>
+                        <span>Nearly every day</span>
+                    </div>
+                </div>
+            </div>
+            <div class="spacer50px"></div>
+            <div class="question" data-category="Kategori8">
+                <p style="text-align: center;">Moving or speaking so slowly that other people could
+                    have noticed. Or the opposite being so figety or restless that you have been moving 
+                    around a lot more than usual
+                    </p>
+                <div class="options scale">
+                    <div class="scale-option-container">
+                        <button type="button" class="option scale-option" data-value="0"></button>
+                        <span>Not at all</span>
+                    </div>
+                    <div class="scale-option-container">
+                        <button type="button" class="option scale-option" data-value="1"></button>
+                        <span>Several days</span>
+                    </div>
+                    <div class="scale-option-container">
+                        <button type="button" class="option scale-option" data-value="2"></button>
+                        <span>More than half days</span>
+                    </div>
+                    <div class="scale-option-container">
+                        <button type="button" class="option scale-option" data-value="3"></button>
+                        <span>Nearly every day</span>
+                    </div>
+                </div>
+            </div>
+            <div class="spacer50px"></div>
+            <div class="question" data-category="Kategori9">
+                <p style="text-align: center;">Thoughts that you would be better off dead, or of
+                    hurting yourself
+                    </p>
+                <div class="options scale">
+                    <div class="scale-option-container">
+                        <button type="button" class="option scale-option" data-value="0"></button>
+                        <span>Not at all</span>
+                    </div>
+                    <div class="scale-option-container">
+                        <button type="button" class="option scale-option" data-value="1"></button>
+                        <span>Several days</span>
+                    </div>
+                    <div class="scale-option-container">
+                        <button type="button" class="option scale-option" data-value="2"></button>
+                        <span>More than half days</span>
+                    </div>
+                    <div class="scale-option-container">
+                        <button type="button" class="option scale-option" data-value="3"></button>
+                        <span>Nearly every day</span>
+                    </div>
+                </div>
+            </div>
+            <div class="spacer50px"></div>
+            <div class="question" data-category="Kategori10">
+                <p style="text-align: center;">If you checked off any problems, how difficult have these
+                    problems made it for you to do your work, take care of things at home, or get along with 
+                    other people 
+                </p>
+                <div class="options scale">
+                    <div class="scale-option-container">
+                        <button type="button" class="option scale-option" data-value="0"></button>
+                        <span>Not difficult at all</span>
+                    </div>
+                    <div class="scale-option-container">
+                        <button type="button" class="option scale-option" data-value="1"></button>
+                        <span>Somewhat difficult</span>
+                    </div>
+                    <div class="scale-option-container">
+                        <button type="button" class="option scale-option" data-value="2"></button>
+                        <span>Very difficult</span>
+                    </div>
+                    <div class="scale-option-container">
+                        <button type="button" class="option scale-option" data-value="3"></button>
+                        <span>Extremely difficult</span>
+                    </div>
+                </div>
+            </div>
+            <div class="spacer100px"></div>
+            <button id="calculateResults" :hover>View Results</button>
+            <div class="spacer100px"></div>
+            <!-- <div class="spacer100px"></div> -->
+            <!-- <p class="yourex">youRex.</p> -->
+            <footer>
+                <span class="footer-text">
+                    <span class="dark-grey">youR</span><span class="black">ex</span><span class="dark-grey">.</span>
+                </span>
+            </footer>
+        </div>
+
+        <div class="page page-3">
+            <div class="closing-page">
+            <!-- <h2 style="text-align: center;">You might have</h2>
+            <div id="results"></div>
+            <button onclick="displayRandomSupport()">Keep yourself safe!</button>
+            <p class="support-text" id="support-message">Keep yourself safe!</p>
+            <button onclick="resetSurvey()">Start Over</button>
+            <button onclick="window.location.href='https://simaster.ugm.ac.id/';">Simaster</button>
+            <p class="yourex" style="padding-top: 100px;">youRex.</p> -->
+            <div class="result-container">
+                <h1>You might have...</h1>
+                <div id="results"></div> <!-- Result from backend -->
+                <p class="support-text" id="supportText">Keep yourself safe!</p> <!-- Support text -->
+            </div>
+            <div>
+                <h1>Here are some hotlines you can contact:</h1>
+                <div style="margin-bottom: 2rem;"></div>
+            </div>
+        
+            <div class="hotline-section">
+                <!-- Hotline Box 1 -->
+                <div class="hotline-box">
+                    <h3>Gadjah Mada Medical Centre</h3>
+                    <p>Phone: <a href="https://wa.me/c/6281326200342"target="_blank">+6281326200342</a></p>
+                    <p>Website: <a href="https://gmc.ugm.ac.id/" target="_blank">gmc.ugm.ac.id</a></p>
+                </div>
+                <!-- Hotline Box 2 -->
+                <div class="hotline-box">
+                    <h3>Unit Konsultasi Psikologi UGM</h3>
+                    <p>Phone (services):<a href="https://wa.me/c/6285759161581"target="_blank">+6285759161581</a></p>
+                    <p>Phone (Emergency Response): <a href="https://wa.me/6281329520052"target="_blank">+6281329520052</a></p>
+                    <p>Website: <a href="https://ukp.psikologi.ugm.ac.id/" target="_blank">ukp.psikologi.ugm.ac.id</a></p>
+                </div>
+                <div class="hotline-box">
+                    <h3>Sejiwa</h3>
+                    <p>Phone: 119</p>
+                    <p>Website: <a href="https://himpsi.or.id/" target="_blank">himpsi.or.id</a></p>
+                </div>
+            </div>
+            <div class="return">
+                <button onclick="navigateAndReset()" :hover>Start Over</button>
+            </div>
+            <button onclick="window.location.href='https://simaster.ugm.ac.id/';" :hover>Return to Simaster</button>
+            <!-- <p class="yourex">youRex.</p> -->
+        </div>
+        <div class="spacer100px"></div>
+        <footer>
+            <span class="footer-text">
+                <span class="dark-grey">youR</span><span class="black">ex</span><span class="dark-grey">.</span>
+            </span>
+        </footer>
+    </div>
+</div>
+<!-- </div> -->
+    <script src="./script.js"></script>
+</body>
+</html>
