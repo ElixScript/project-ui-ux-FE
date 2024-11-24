@@ -15,7 +15,6 @@ Branch ini dibuat untuk mengembangkan fitur dan memperbaiki elemen-elemen pentin
      - Navigasi antar halaman menggunakan tombol **Next**.
      - Desain responsif untuk pengalaman pengguna yang lebih baik di berbagai perangkat.
    - **Implementasi:**
-     - File utama: `index.html`, `styles.css`, dan `script.js`.
      - Navigasi menggunakan JavaScript untuk mengatur state halaman.
 
 2. **📊 [Hasil Survei Dinamis]**
