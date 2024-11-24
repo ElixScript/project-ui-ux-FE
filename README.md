@@ -8,14 +8,7 @@ Branch ini dibuat untuk mengembangkan fitur dan memperbaiki elemen-elemen pentin
 
 ### **📌 Deskripsi Fitur atau Perubahan**
 
-1. **🌐 [Landing Page]**
-   - Halaman pengantar untuk menyambut pengguna sebelum mereka memulai survei.
-   - **Fitur:**
-     - Pesan motivasi singkat.
-     - Tombol **Start** yang mengarahkan pengguna ke halaman survei utama.
-   - **Implementasi:** `landingPage.html`, dengan dukungan styling inline.
-
-2. **📝 [Survey Multi-Halaman]**
+1. **📝 [Survey Multi-Halaman]**
    - Survei dibagi menjadi beberapa halaman untuk meningkatkan kenyamanan pengguna.
    - **Fitur:**
      - Pertanyaan berbasis skala (0–3) yang relevan dengan penilaian depresi.
@@ -25,7 +18,7 @@ Branch ini dibuat untuk mengembangkan fitur dan memperbaiki elemen-elemen pentin
      - File utama: `index.html`, `styles.css`, dan `script.js`.
      - Navigasi menggunakan JavaScript untuk mengatur state halaman.
 
-3. **📊 [Hasil Survei Dinamis]**
+2. **📊 [Hasil Survei Dinamis]**
    - Menampilkan hasil akhir berdasarkan skor survei.
    - **Fitur:**
      - Mengkalkulasi total skor berdasarkan jawaban pengguna.
@@ -95,39 +88,5 @@ Branch ini dibuat untuk mengembangkan fitur dan memperbaiki elemen-elemen pentin
 
 ---
 
-### **✅ Status Pengerjaan**
-- [x] Analisis kebutuhan.
-- [x] Implementasi fitur:
-  - [x] Landing Page.
-  - [x] Navigasi multi-halaman.
-  - [x] Kalkulasi hasil survei.
-  - [ ] Pengujian menyeluruh.
-  - [ ] Dokumentasi tambahan.
-
----
-
-### **🛠️ Cara Menggunakan**
-
-1. Clone repository ini:
-   ```bash
-   git clone -b bagus-quiz&result https://github.com/your-username/mental-health-survey.git
-   ```
-2. Buka file `landingPage.html` di browser Anda.
-3. Ikuti langkah berikut:
-   - Klik tombol **Start** untuk memulai survei.
-   - Jawab pertanyaan dengan memilih opsi yang sesuai.
-   - Klik tombol **Next** untuk berpindah halaman.
-   - Klik tombol **Lihat Hasil** untuk melihat kategori depresi Anda.
-   - Klik tombol **Mulai Lagi** untuk memulai survei dari awal
 
 
----
-
-### **🚀 Rencana Pengembangan**
-- [ ] Menyimpan hasil survei ke dalam database untuk keperluan analisis lebih lanjut.
-- [ ] Menambahkan rekomendasi berdasarkan hasil survei.
-- [ ] Meningkatkan pengalaman pengguna dengan animasi transisi antar halaman.
-- [ ] Menerapkan autentikasi pengguna untuk menyimpan riwayat survei.
-
-
----
