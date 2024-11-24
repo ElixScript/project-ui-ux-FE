@@ -142,22 +142,17 @@ calculateResultsButton.addEventListener("click", function () {
     showPage(pages.length - 1);
     resultsDiv.innerHTML = "";
 
-    const totalScore = Object.values(answers).reduce((sum, score) => sum + score, 0);
+    
+    const totalScore = Object.entries(answers)
+        .filter(([category]) => category !== "Kategori10")
+        .reduce((sum, [, score]) => sum + score, 0);
 
     const depressionCategory = getDepressionCategory(totalScore);
 
-    // Save result to localStorage
-    // localStorage.setItem("depressionResult", JSON.stringify({ totalScore, depressionCategory }));
-
-    // Redirect to closing.html
-    // window.location.href = "./closing.html";
-    
     const result = document.createElement("p");
     result.textContent = depressionCategory;
     resultsDiv.appendChild(result);
 });
-
-
 
     window.resetSurvey = function () {
         currentPage = 0;
