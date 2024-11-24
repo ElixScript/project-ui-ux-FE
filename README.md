@@ -35,8 +35,56 @@ Branch ini dibuat oleh **Bagus Cipta Pratama** dengan **NIM 23/516539/PA/22097**
      - Rendering hasil pada halaman terakhir (`page-3`).
 
 ---
+### **🔧 Fungsi Utama**
 
-### **🖱️ Event Listeners**
+#### 1. **📄 showPage(pageIndex)**
+   - **Deskripsi:** Menampilkan halaman survei berdasarkan index.
+   - **Implementasi:**
+     
+javascript
+     function showPage(pageIndex) {
+         pages.forEach((page, index) => {
+             page.classList.toggle("active", index === pageIndex);
+         });
+         if (pageIndex === 0 || pageIndex === 1) {
+             pages[pageIndex].scrollIntoView({ behavior: "smooth" });
+         }
+     }
+
+
+#### 2. **📈 getDepressionCategory(score)**
+   - **Deskripsi:** Menghitung kategori depresi berdasarkan skor total.
+   - **Implementasi:**
+     
+javascript
+     function getDepressionCategory(score) {
+         if (score <= 4) return "Minimal Depression";
+         else if (score <= 9) return "Mild Depression";
+         else if (score <= 14) return "Moderate Depression";
+         else if (score <= 19) return "Moderately Severe Depression";
+         else return "Severe Depression";
+     }
+
+
+#### 3. **🔄 resetSurvey()**
+   - **Deskripsi:** Mengatur ulang semua jawaban dan mengembalikan pengguna ke halaman pertama.
+   - **Implementasi:**
+     
+javascript
+     function resetSurvey() {
+         currentPage = 0;
+         showPage(currentPage);
+         for (const category in answers) {
+             answers[category] = 0;
+         }
+         document.querySelectorAll(".option").forEach(btn => btn.classList.remove("selected"));
+         resultsDiv.innerHTML = "";
+     }
+
+
+#### 4. **🖱️ Event Listeners**
+   - Mengatur interaktivitas, seperti memilih opsi jawaban, navigasi antar halaman, dan menampilkan hasil.
+
 
 #### **1. Event Listener untuk Tombol "Next"**
 **Deskripsi:** Mengatur navigasi antar halaman saat tombol "Next" ditekan.
