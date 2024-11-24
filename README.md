@@ -2,7 +2,7 @@
 
 ## **Branch: `bagus-quiz&result`**
 
-Branch ini dibuat untuk mengembangkan fitur dan memperbaiki elemen-elemen penting dalam aplikasi **Mental Health Survey**, yang dirancang untuk mengukur tingkat depresi berdasarkan **Patient Health Questionnaire (PHQ-9)**. seluruh Branch ini merefleksikan pekerjaan saya , Bagus Cipta Pratama (23/516539/PA/22097) dalam membangun projek secara keseluruhan . 
+Branch ini dibuat oleh **Bagus Cipta Pratama** dengan **NIM 23/516539/PA/22097**, yang merefleksikan seluruh pekerjaannya dalam membangun dan mengembangkan proyek **Mental Health Survey Application**. Proyek ini dirancang untuk mengukur tingkat depresi berdasarkan **Patient Health Questionnaire (PHQ-9)**. Semua fitur yang ada dalam branch ini mencerminkan hasil pemikiran, implementasi, dan pengujian yang telah dilakukan secara menyeluruh.
 
 ---
 
