@@ -6,89 +6,92 @@ Branch ini dibuat oleh **Bagus Cipta Pratama** dengan **NIM 23/516539/PA/22097**
 
 ---
 
-### **📌 Deskripsi Fitur atau Perubahan**
+## **📌 Deskripsi Fitur atau Perubahan**
 
-1. **📝 [Survey Multi-Halaman]**
-   - Survei dibagi menjadi beberapa halaman untuk meningkatkan kenyamanan pengguna.
-   - **Fitur:**
-     - Pertanyaan berbasis skala (0–3) yang relevan dengan penilaian depresi.
-     - Navigasi antar halaman menggunakan tombol **Next**.
-     - Setiap tombol ketika dipencet akan langsung **scroll** ke pertanyaan berikutnya di bawah.
-     - Desain responsif untuk pengalaman pengguna yang lebih baik di berbagai perangkat.
-   - **Implementasi:**
-     - Navigasi menggunakan JavaScript untuk mengatur state halaman.
-     - **Smooth scrolling** dengan memanfaatkan properti `scrollIntoView`.
-
-2. **📊 [Hasil Survei Dinamis]**
-   - Menampilkan hasil akhir berdasarkan skor survei.
-   - **Fitur:**
-     - Mengkalkulasi total skor berdasarkan jawaban pengguna.
-     - Memberikan kategori depresi, seperti:
-       - Minimal Depression.
-       - Mild Depression.
-       - Moderate Depression.
-       - Moderately Severe Depression.
-       - Severe Depression.
-     - Tombol **Restart** untuk memulai ulang survei.
-   - **Implementasi:**
-     - Fungsi `getDepressionCategory(score)` dalam `script.js`.
-     - Rendering hasil pada halaman terakhir (`page-3`).
+### **1. 📝 [Survey Multi-Halaman]**
+- **Deskripsi:** Survei dibagi menjadi beberapa halaman untuk meningkatkan kenyamanan pengguna.
+- **Fitur:**
+  - Pertanyaan berbasis skala (0–3) yang relevan dengan penilaian depresi.
+  - Navigasi antar halaman menggunakan tombol **Next**.
+  - Setiap tombol ketika dipencet akan langsung **scroll** ke pertanyaan berikutnya di bawah.
+  - Desain responsif untuk pengalaman pengguna yang lebih baik di berbagai perangkat.
+- **Implementasi:**
+  - Navigasi menggunakan JavaScript untuk mengatur state halaman.
+  - **Smooth scrolling** dengan memanfaatkan properti `scrollIntoView`.
 
 ---
-### **🔧 Fungsi Utama**
 
-#### 1. **📄 showPage(pageIndex)**
-   - **Deskripsi:** Menampilkan halaman survei berdasarkan index.
-   - **Implementasi:**
-     
-javascript
-     function showPage(pageIndex) {
-         pages.forEach((page, index) => {
-             page.classList.toggle("active", index === pageIndex);
-         });
-         if (pageIndex === 0 || pageIndex === 1) {
-             pages[pageIndex].scrollIntoView({ behavior: "smooth" });
-         }
-     }
+### **2. 📊 [Hasil Survei Dinamis]**
+- **Deskripsi:** Menampilkan hasil akhir berdasarkan skor survei.
+- **Fitur:**
+  - Mengkalkulasi total skor berdasarkan jawaban pengguna.
+  - Memberikan kategori depresi, seperti:
+    - Minimal Depression.
+    - Mild Depression.
+    - Moderate Depression.
+    - Moderately Severe Depression.
+    - Severe Depression.
+  - Tombol **Restart** untuk memulai ulang survei.
+- **Implementasi:**
+  - Fungsi `getDepressionCategory(score)` dalam `script.js`.
+  - Rendering hasil pada halaman terakhir (`page-3`).
 
+---
 
-#### 2. **📈 getDepressionCategory(score)**
-   - **Deskripsi:** Menghitung kategori depresi berdasarkan skor total.
-   - **Implementasi:**
-     
-javascript
-     function getDepressionCategory(score) {
-         if (score <= 4) return "Minimal Depression";
-         else if (score <= 9) return "Mild Depression";
-         else if (score <= 14) return "Moderate Depression";
-         else if (score <= 19) return "Moderately Severe Depression";
-         else return "Severe Depression";
-     }
+## **🔧 Fungsi Utama**
 
+### **1. 📄 showPage(pageIndex)**
+- **Deskripsi:** Menampilkan halaman survei berdasarkan indeks.
+- **Implementasi:**
+```javascript
+function showPage(pageIndex) {
+    pages.forEach((page, index) => {
+        page.classList.toggle("active", index === pageIndex);
+    });
+    if (pageIndex === 0 || pageIndex === 1) {
+        pages[pageIndex].scrollIntoView({ behavior: "smooth" });
+    }
+}
+```
 
-#### 3. **🔄 resetSurvey()**
-   - **Deskripsi:** Mengatur ulang semua jawaban dan mengembalikan pengguna ke halaman pertama.
-   - **Implementasi:**
-     
-javascript
-     function resetSurvey() {
-         currentPage = 0;
-         showPage(currentPage);
-         for (const category in answers) {
-             answers[category] = 0;
-         }
-         document.querySelectorAll(".option").forEach(btn => btn.classList.remove("selected"));
-         resultsDiv.innerHTML = "";
-     }
+---
 
+### **2. 📈 getDepressionCategory(score)**
+- **Deskripsi:** Menghitung kategori depresi berdasarkan skor total.
+- **Implementasi:**
+```javascript
+function getDepressionCategory(score) {
+    if (score <= 4) return "Minimal Depression";
+    else if (score <= 9) return "Mild Depression";
+    else if (score <= 14) return "Moderate Depression";
+    else if (score <= 19) return "Moderately Severe Depression";
+    else return "Severe Depression";
+}
+```
 
-#### 4. **🖱️ Event Listeners**
-   - Mengatur interaktivitas, seperti memilih opsi jawaban, navigasi antar halaman, dan menampilkan hasil.
+---
 
+### **3. 🔄 resetSurvey()**
+- **Deskripsi:** Mengatur ulang semua jawaban dan mengembalikan pengguna ke halaman pertama.
+- **Implementasi:**
+```javascript
+function resetSurvey() {
+    currentPage = 0;
+    showPage(currentPage);
+    for (const category in answers) {
+        answers[category] = 0;
+    }
+    document.querySelectorAll(".option").forEach(btn => btn.classList.remove("selected"));
+    resultsDiv.innerHTML = "";
+}
+```
+
+---
+
+### **4. 🖱️ Event Listeners**
 
 #### **1. Event Listener untuk Tombol "Next"**
-**Deskripsi:** Mengatur navigasi antar halaman saat tombol "Next" ditekan.
-
+- **Deskripsi:** Mengatur navigasi antar halaman saat tombol "Next" ditekan.
 ```javascript
 nextPageButton.addEventListener("click", function() {
     if (currentPage < pages.length - 1) {
@@ -101,8 +104,7 @@ nextPageButton.addEventListener("click", function() {
 ---
 
 #### **2. Event Listener untuk Tombol "Lihat Hasil"**
-**Deskripsi:** Menampilkan hasil survei berdasarkan skor jawaban pengguna.
-
+- **Deskripsi:** Menampilkan hasil survei berdasarkan skor jawaban pengguna.
 ```javascript
 calculateResultsButton.addEventListener("click", function() {
     showPage(pages.length - 1); // Tampilkan halaman hasil
@@ -121,8 +123,7 @@ calculateResultsButton.addEventListener("click", function() {
 ---
 
 #### **3. Event Listener untuk Setiap Opsi Jawaban**
-**Deskripsi:** Menyimpan jawaban pengguna dan memberikan efek visual pada opsi yang dipilih.
-
+- **Deskripsi:** Menyimpan jawaban pengguna dan memberikan efek visual pada opsi yang dipilih.
 ```javascript
 document.querySelectorAll(".option").forEach(button => {
     button.addEventListener("click", function() {
@@ -141,5 +142,3 @@ document.querySelectorAll(".option").forEach(button => {
     });
 });
 ```
-
----
