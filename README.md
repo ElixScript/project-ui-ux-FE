@@ -1,6 +1,7 @@
-# 📋 **Project UI/UX Front-End**
+# 📑 **Branch: `closingpage-dan-styling-hotline-dan-tombol`**
 
-Proyek ini merupakan tugas kelompok untuk mata kuliah **UI/UX Front-End**, yang bertujuan untuk mempelajari studi kasus dan menerapkan konsep pembuatan website **Survei Kesehatan Mental**.
+Bagian ini di kerjakan oleh:
+Saya, **Alia Hafida Rahmah**, dengan NIM **(23/520426/PA/22371)**. Yang dikerjakan disini meliputi
 
 ---
 
