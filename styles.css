@@ -226,6 +226,27 @@ button:hover {
     color: #333;
 }
 
+.simaster-button {
+    display: block;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: #88619a;
+    color: #fff;
+    place-items: center;
+    margin: 10px auto; 
+    text-align: center;
+    width: 150px; 
+    line-height: 1;
+    border-radius: 50px;
+    font-size: 15px;
+}
+
+.simaster-button:hover {
+    background-color: #ecc4ff;
+    color: #333;
+}
 
 .options.scale {
     display: flex;
