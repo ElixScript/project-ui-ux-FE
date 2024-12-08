@@ -237,8 +237,8 @@ button:hover {
     place-items: center;
     margin: 10px auto; 
     text-align: center;
-    width: 150px; 
-    line-height: 1;
+    width: auto; 
+    line-height: 2;
     border-radius: 50px;
     font-size: 15px;
 }
