@@ -1,4 +1,4 @@
-# 📋 **Project UI/UX Front-End**
+# 📋 **Project UI/UX Front-En**
 
 Proyek ini merupakan tugas kelompok untuk mata kuliah **UI/UX Front-End**, yang bertujuan untuk mempelajari studi kasus dan menerapkan konsep pembuatan website **Survei Kesehatan Mental**.
 
